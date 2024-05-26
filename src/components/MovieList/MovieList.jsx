@@ -1,12 +1,14 @@
-import React from 'react';
-import { Grid } from '@mui/material';
+import React from "react";
+import { Grid } from "@mui/material";
 
-import useStyles from './styles';
-import { Movie } from '../index';
+import useStyles from "./styles";
+import { Movie } from "../index";
 
 function MovieList({ movies, numberOfMovies, excludeFirst }) {
   const classes = useStyles();
   const startFrom = excludeFirst ? 1 : 0;
+
+  if (!movies.results) return <h1>Loading...</h1>;
 
   return (
     <Grid container className={classes.moviesContainer}>

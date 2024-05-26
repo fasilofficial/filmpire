@@ -12,11 +12,11 @@ function Movie({ movie, i }) {
       <Grow in key={i} timeout={(i + 1) * 250}>
         <Link className={classes.links} to={`/movie/${movie.id}`}>
           <img
-            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://powderalloy.com/wp-content/uploads/2015/11/sidebar-placeholder.png'}
+            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://faculty.eng.ufl.edu/elliot-douglas/wp-content/uploads/sites/70/2015/11/img-placeholder-270x300.png'}
             alt={movie.title}
             className={classes.image}
           />
-          <Typography className={classes.title} variant="h5">{movie.title}</Typography>
+          <Typography className={classes.title} variant="h6">{movie.title}</Typography>
           <Tooltip disableTouchListener title={`${movie.vote_average} / 10`}>
             <div>
               <Rating readOnly value={movie.vote_average / 2} precision={0.1} />

@@ -21,7 +21,7 @@ function Movies() {
     );
   }
 
-  if (!data.results.length) {
+  if (!data?.results?.length) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" mt="20px">
         <Typography variant="h4">
@@ -38,7 +38,7 @@ function Movies() {
   return (
     <div>
       <FeaturedMovie movie={data.results[0]} />
-      <MovieList movies={data} numberOfMovies={numberOfMovies} excludeFirst />
+      <MovieList movies={data} numberOfMovies={numberOfMovies} excludeFirst={data.results.length > 1} />
       <Pagination currentPage={page} setPage={setPage} totalPages={data.total_pages} />
     </div>
   );
