@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Box } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import useStyles from "./styles";
@@ -38,7 +38,7 @@ function Pagination({ currentPage, setPage, totalPages }) {
         pageNumbers.push("...");
       }
 
-      // Middle pages
+      // Middle page (current)
       if (currentPage > visiblePages && currentPage < totalPages - visiblePages + 1) {
         pageNumbers.push(currentPage);
       }
@@ -61,49 +61,39 @@ function Pagination({ currentPage, setPage, totalPages }) {
   if (totalPages === 0) return null;
 
   return (
-    <div className={classes.container}>
+    <Box className={classes.container}>
       <Button
         onClick={handlePrev}
         variant="contained"
         className={classes.button}
         color="primary"
-        type="button"
         size="medium"
         disabled={currentPage === 1}
       >
         <NavigateBeforeIcon />
       </Button>
-      {pageNumbers.map((page, index) =>
-        page === "..." ? (
-          <Typography key={index} className={classes.ellipsis}>
-            ...
-          </Typography>
-        ) : (
-          <Button
-            key={page}
-            onClick={() => setPage(page)}
-            variant={page === currentPage ? "contained" : "outlined"}
-            className={classes.pageButton}
-            color="primary"
-            type="button"
-            size="medium"
+      <Box className={classes.pageNumbers}>
+        {pageNumbers.map((page, index) => (
+          <Typography
+            key={index}
+            className={page === currentPage ? classes.activePage : classes.page}
+            variant="body1"
           >
             {page}
-          </Button>
-        )
-      )}
+          </Typography>
+        ))}
+      </Box>
       <Button
         onClick={handleNext}
         variant="contained"
         className={classes.button}
         color="primary"
-        type="button"
         size="medium"
         disabled={currentPage === totalPages}
       >
         <NavigateNextIcon />
       </Button>
-    </div>
+    </Box>
   );
 }
 
