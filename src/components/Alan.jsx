@@ -13,36 +13,43 @@ function useAlan() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    alanBtn({
-      key: process.env.REACT_APP_ALAN_SDK_KEY,
-      onCommand: ({ command, mode, genres, genreOrCategory, query }) => {
-        if (command === 'chooseGenre') {
-          const foundGenre = genres.find((g) => g.name.toLowerCase() === genreOrCategory.toLowerCase());
-          if (foundGenre) {
+    if (!process.env.REACT_APP_ALAN_SDK_KEY) return;
+
+    try {
+      alanBtn({
+        key: process.env.REACT_APP_ALAN_SDK_KEY,
+        onCommand: ({ command, mode, genres, genreOrCategory, query }) => {
+          if (command === 'chooseGenre' && genres) {
+            const foundGenre = genres.find((g) => g.name.toLowerCase() === genreOrCategory?.toLowerCase());
+            if (foundGenre) {
+              navigate(`/genre/${foundGenre.id}`);
+              dispatch(selectGenreOrCategory(foundGenre.id));
+            } else {
+              const category = genreOrCategory?.startsWith('top') ? 'top_rated' : genreOrCategory;
+              navigate(`/${category === 'top_rated' ? 'top-rated' : category}`);
+              dispatch(selectGenreOrCategory(category));
+            }
+          } else if (command === 'changeMode') {
+            if (mode === 'light') {
+              setMode('light');
+            } else {
+              setMode('dark');
+            }
+          } else if (command === 'login') {
+            fetchToken();
+          } else if (command === 'logout') {
+            localStorage.clear();
             navigate('/');
-            dispatch(selectGenreOrCategory(foundGenre.id));
-          } else {
-            const category = genreOrCategory.startsWith('top') ? 'top_rated' : genreOrCategory;
-            navigate('/');
-            dispatch(selectGenreOrCategory(category));
+          } else if (command === 'search' && query) {
+            dispatch(searchMovie(query));
+            navigate(`/movies?search=${encodeURIComponent(query)}`);
           }
-        } else if (command === 'changeMode') {
-          if (mode === 'light') {
-            setMode('light');
-          } else {
-            setMode('dark');
-          }
-        } else if (command === 'login') {
-          fetchToken();
-        } else if (command === 'logout') {
-          localStorage.clear();
-          navigate('/');
-        } else if (command === 'search') {
-          dispatch(searchMovie(query));
-        }
-      },
-    });
-  }, []);
+        },
+      });
+    } catch (e) {
+      // Ignore Alan initialization errors
+    }
+  }, [dispatch, navigate, setMode]);
 }
 
 export default useAlan;

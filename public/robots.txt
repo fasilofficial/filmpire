@@ -1,0 +1,27 @@
+# FilmPire robots.txt
+User-agent: *
+Allow: /
+Allow: /movies
+Allow: /popular
+Allow: /top-rated
+Allow: /upcoming
+Allow: /genres
+Allow: /genre/
+Allow: /movie/
+Allow: /guides/
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /privacy
+Allow: /terms
+Allow: /copyright
+
+# Disallow private user screens and authentication callbacks
+Disallow: /profile/
+Disallow: /approved
+
+# Specific permissions for Google AdSense Crawler
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://filmpire-page.vercel.app/sitemap.xml
