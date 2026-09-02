@@ -136,6 +136,43 @@ export default function About() {
         </Typography>
       </section>
 
+      {/* Support FilmPire */}
+      <section className={classes.section}>
+        <Typography variant="h4" component="h2" className={classes.sectionHeading}>
+          Support Independent Development
+        </Typography>
+        <Typography variant="body1" color="textSecondary" className={classes.paragraph}>
+          FilmPire is created and maintained as an independent cinema discovery and editorial resource. If you find our guides, genre breakdowns, and movie recommendations valuable, consider supporting our ongoing development and hosting costs.
+        </Typography>
+        <Box mt={2}>
+          <Button
+            component="a"
+            href="https://buymeacoffee.com/mfasilofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="contained"
+            size="large"
+            sx={{
+              backgroundColor: '#FFDD00',
+              color: '#000000',
+              fontWeight: 700,
+              textTransform: 'none',
+              borderRadius: '8px',
+              px: 3,
+              py: 1,
+              fontSize: '0.95rem',
+              boxShadow: '0 4px 14px rgba(255, 221, 0, 0.3)',
+              '&:hover': {
+                backgroundColor: '#ffe84d',
+                color: '#000000',
+              },
+            }}
+          >
+            ☕ Buy Me a Coffee
+          </Button>
+        </Box>
+      </section>
+
       {/* Call to Action */}
       <Box textAlign="center" mt={4} pt={3} borderTop="1px solid rgba(255, 255, 255, 0.08)">
         <Typography variant="h6" fontWeight={700} gutterBottom>

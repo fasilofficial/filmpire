@@ -19,6 +19,7 @@ import {
   Whatshot,
   StarBorder,
   Upcoming,
+  LocalCafe,
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
@@ -204,6 +205,34 @@ function Sidebar({ setMobileOpen }) {
             <ListItemText primary="Contact Us" primaryTypographyProps={{ fontSize: '0.88rem' }} />
           </ListItem>
         </Link>
+        <ListItem
+          button
+          component="a"
+          href="https://buymeacoffee.com/mfasilofficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            mt: 1,
+            mx: 1,
+            borderRadius: '8px',
+            backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255, 221, 0, 0.08)' : 'rgba(255, 221, 0, 0.15)',
+            '&:hover': {
+              backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255, 221, 0, 0.18)' : 'rgba(255, 221, 0, 0.28)',
+            },
+          }}
+        >
+          <ListItemIcon sx={{ minWidth: 36 }}>
+            <LocalCafe fontSize="small" sx={{ color: '#FFDD00' }} />
+          </ListItemIcon>
+          <ListItemText
+            primary="Buy Me a Coffee"
+            primaryTypographyProps={{
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              color: theme.palette.mode === 'dark' ? '#FFDD00' : '#b45309',
+            }}
+          />
+        </ListItem>
       </List>
     </>
   );

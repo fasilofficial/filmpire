@@ -30,6 +30,35 @@ export default function Footer() {
                 This product uses the TMDB API but is not endorsed or certified by TMDB.
               </Typography>
             </Box>
+
+            <Box mt={2.5}>
+              <MuiLink
+                href="https://buymeacoffee.com/mfasilofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  backgroundColor: '#FFDD00',
+                  color: '#000000 !important',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  textDecoration: 'none !important',
+                  borderRadius: '8px',
+                  px: 2,
+                  py: 0.8,
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 12px rgba(255, 221, 0, 0.25)',
+                  '&:hover': {
+                    backgroundColor: '#ffe84d',
+                    transform: 'translateY(-2px)',
+                  },
+                }}
+              >
+                <span role="img" aria-label="coffee">☕</span> Buy Me a Coffee
+              </MuiLink>
+            </Box>
           </Grid>
 
           {/* Explore Links */}
