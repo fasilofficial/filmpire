@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="logo.png" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#121212" />
 
     <meta
       name="description"
-      content="Filmpire offers a comprehensive database of movies, TV shows, actors, and more, powered by the TMDB API. Explore detailed information, reviews, trailers, and ratings to enhance your viewing experience."
+      content="FilmPire is a curated cinema discovery platform and movie database. Explore verified movie details, genre deep dives, and expert editorial cinema guides."
     />
     <meta
       name="keywords"
-      content="Filmpire, movies, TV shows, film database, TMDB API, movie, trailers, ratings, actors, directors"
+      content="FilmPire, movies, cinema guides, movie recommendations, film analysis, TMDB, movie genres, directors, top rated films, cinema discovery"
     />
     <meta
       name="author"
@@ -21,36 +21,42 @@
     <link rel="canonical" href="https://filmpire-page.vercel.app/" />
 
     <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="FilmPire" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://filmpire-page.vercel.app/" />
     <meta
       property="og:title"
-      content="Filmpire - Discover Movies, TV Shows & More"
+      content="FilmPire - Curated Movie Discovery & Cinema Guides"
     />
     <meta
       property="og:description"
-      content="Explore a comprehensive database of movies and TV shows, powered by the TMDB API. Find detailed information, trailers."
+      content="Discover exceptional films through verified metadata, genre-specific taxonomies, and expert editorial guides."
     />
-    <meta property="og:image" content="./logo.png" />
-    <meta property="og:url" content="https://filmpire-page.vercel.app/" />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://filmpire-page.vercel.app/" />
     <meta
       name="twitter:title"
-      content="Filmpire - Discover Movies, TV Shows & More"
+      content="FilmPire - Curated Movie Discovery & Cinema Guides"
     />
     <meta
       name="twitter:description"
-      content="Explore a comprehensive database of movies and TV shows, powered by the TMDB API. Find detailed information, trailers."
+      content="Discover exceptional films through verified metadata, genre-specific taxonomies, and expert editorial guides."
     />
-    <meta name="twitter:image" content="./logo.png" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
-    <title>Filmpire - Discover Movies, TV Shows & More</title>
-    <!-- Google tag (gtag.js) -->
+
+    <title>FilmPire - Curated Movie Discovery, Cinema Guides & Database</title>
+
+    <!-- Google Analytics (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-HF54VMRPRZ"
@@ -61,17 +67,469 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-HF54VMRPRZ");
     </script>
 
+    <!-- Google AdSense -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6821531199235214"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://filmpire-page.vercel.app/#website",
+            "url": "https://filmpire-page.vercel.app/",
+            "name": "FilmPire",
+            "description": "Curated cinema discovery platform featuring verified movie metadata, genre taxonomies, and original editorial film guides.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "FilmPire",
+              "url": "https://filmpire-page.vercel.app/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://filmpire-page.vercel.app/logo.png"
+              }
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://filmpire-page.vercel.app/?query={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://filmpire-page.vercel.app/#guides",
+            "name": "FilmPire Editorial Cinema Guides",
+            "description": "Expert in-depth essays, viewing strategies, and cinematic analyses.",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "How to Find a Good Movie: Practical Strategies for Overcoming Choice Fatigue",
+                "url": "https://filmpire-page.vercel.app/guides/how-to-find-a-good-movie"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "How Movie Ratings Work: Demystifying Critic Scores vs. Audience Averages",
+                "url": "https://filmpire-page.vercel.app/guides/how-movie-ratings-work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Movie Genres Explained: A Comprehensive Taxonomy of Film Styles",
+                "url": "https://filmpire-page.vercel.app/guides/movie-genres-explained"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "How to Build and Maintain an Intentional Movie Watchlist",
+                "url": "https://filmpire-page.vercel.app/guides/how-to-build-a-movie-watchlist"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "10 Mind-Bending Sci-Fi Masterpieces That Reward Multiple Viewings",
+                "url": "https://filmpire-page.vercel.app/guides/top-10-mind-bending-sci-fi-movies"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Hidden Gems in World Cinema: A Beginner's Guide to International Film",
+                "url": "https://filmpire-page.vercel.app/guides/hidden-gems-foreign-cinema-beginners"
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Directors Hall of Fame: 8 Visionary Auteurs Redefining Modern Cinema",
+                "url": "https://filmpire-page.vercel.app/guides/directors-hall-of-fame-cinema-auteurs"
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "The Evolution of Action Cinema: From Practical Stunts to CGI Spectacle",
+                "url": "https://filmpire-page.vercel.app/guides/evolution-of-action-cinema-practical-to-cgi"
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "Masterclasses in Suspense: Psychological Thrillers That Keep You Guessing",
+                "url": "https://filmpire-page.vercel.app/guides/psychological-thrillers-that-keep-you-guessing"
+              },
+              {
+                "@type": "ListItem",
+                "position": 10,
+                "name": "Beyond Family Cartoons: 10 Profound Animated Films Crafted for Adults",
+                "url": "https://filmpire-page.vercel.app/guides/best-animated-films-for-adults"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Initial Crawler & Fallback Styling -->
+    <style>
+      body {
+        margin: 0;
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+      }
+      .pre-render-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 20px;
+      }
+      .pre-render-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #2a2a2a;
+        padding-bottom: 20px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .pre-render-logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: #ff3366;
+        text-decoration: none;
+        letter-spacing: -0.5px;
+      }
+      .pre-render-nav {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .pre-render-nav a {
+        color: #b0b0b0;
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.2s ease;
+      }
+      .pre-render-nav a:hover {
+        color: #ffffff;
+      }
+      .pre-render-hero {
+        margin-bottom: 48px;
+      }
+      .pre-render-hero h1 {
+        font-size: 36px;
+        margin: 0 0 16px 0;
+        color: #ffffff;
+      }
+      .pre-render-hero p {
+        font-size: 18px;
+        color: #a0a0a0;
+        max-width: 850px;
+      }
+      .pre-render-section {
+        margin-bottom: 48px;
+      }
+      .pre-render-section h2 {
+        font-size: 24px;
+        color: #ffffff;
+        border-bottom: 2px solid #ff3366;
+        padding-bottom: 8px;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+      .pre-render-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
+      }
+      .pre-render-card {
+        background: #1e1e1e;
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .pre-render-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+      .pre-render-card h3 a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .pre-render-card h3 a:hover {
+        color: #ff3366;
+      }
+      .pre-render-meta {
+        font-size: 13px;
+        color: #ff3366;
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+      }
+      .pre-render-card p {
+        font-size: 14px;
+        color: #b0b0b0;
+        margin: 0;
+      }
+      .pre-render-genre-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .pre-render-genre-chip {
+        display: inline-block;
+        background: #252525;
+        border: 1px solid #333333;
+        color: #d0d0d0;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .pre-render-genre-chip:hover {
+        background: #ff3366;
+        color: #ffffff;
+        border-color: #ff3366;
+      }
+      .pre-render-footer {
+        border-top: 1px solid #2a2a2a;
+        padding-top: 32px;
+        margin-top: 48px;
+        font-size: 14px;
+        color: #888888;
+      }
+      .pre-render-footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .pre-render-footer-links a {
+        color: #a0a0a0;
+        text-decoration: none;
+      }
+      .pre-render-footer-links a:hover {
+        color: #ffffff;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- 
+      Pre-rendered semantic fallback content:
+      Provides complete, crawlable editorial content for search engines, web crawlers,
+      and AdSense evaluation bots that inspect the initial HTML document before JavaScript execution.
+      When client-side React mounts, this markup is seamlessly replaced with the interactive application.
+    -->
+    <div id="root">
+      <div class="pre-render-container">
+        <header class="pre-render-header">
+          <a href="/" class="pre-render-logo">FILMPIRE</a>
+          <nav class="pre-render-nav">
+            <a href="/">Home</a>
+            <a href="/popular">Popular Movies</a>
+            <a href="/top-rated">Top Rated</a>
+            <a href="/upcoming">Upcoming Releases</a>
+            <a href="/genres">Genres Directory</a>
+            <a href="/guides">Cinema Guides</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact</a>
+            <a href="/faq">FAQ</a>
+          </nav>
+        </header>
+
+        <main>
+          <section class="pre-render-hero">
+            <h1>FilmPire: Curated Movie Discovery & Cinema Guides</h1>
+            <p>
+              Welcome to FilmPire — an independent cinema curation and discovery platform. We provide verified film metadata, comprehensive genre archives, and in-depth editorial guides designed to help cinephiles and casual viewers overcome decision fatigue and discover films of enduring artistic value.
+            </p>
+          </section>
+
+          <section class="pre-render-section">
+            <h2>Featured Editorial Cinema Guides</h2>
+            <div class="pre-render-grid">
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Movie Discovery • 7 min read</span>
+                <h3>
+                  <a href="/guides/how-to-find-a-good-movie">
+                    How to Find a Good Movie: Overcoming Choice Fatigue
+                  </a>
+                </h3>
+                <p>
+                  Cut through endless streaming carousels with intentional discovery systems, rating calibration, and mood matching. Learn how to prioritize director filmographies and curate an actionable watchlist.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Film Literacy • 8 min read</span>
+                <h3>
+                  <a href="/guides/how-movie-ratings-work">
+                    How Movie Ratings Work: Critics vs. Audience Averages
+                  </a>
+                </h3>
+                <p>
+                  Understand the mechanics behind IMDb, Rotten Tomatoes, and Metacritic. Learn why genre penalties suppress horror scores and how to spot authentic cinematic gems regardless of raw numbers.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Cinema Taxonomy • 9 min read</span>
+                <h3>
+                  <a href="/guides/movie-genres-explained">
+                    Movie Genres Explained: A Comprehensive Taxonomy
+                  </a>
+                </h3>
+                <p>
+                  A deep dive into narrative conventions, emotional expectations, and stylistic hallmarks across major film categories from psychological thrillers to neo-noir.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Curatorial Habits • 6 min read</span>
+                <h3>
+                  <a href="/guides/how-to-build-a-movie-watchlist">
+                    How to Build and Maintain an Intentional Watchlist
+                  </a>
+                </h3>
+                <p>
+                  Transform your sprawling list of unwatched titles into an energized, multi-tiered queue categorized by mental bandwidth, emotional tone, and running time.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Science Fiction • 8 min read</span>
+                <h3>
+                  <a href="/guides/top-10-mind-bending-sci-fi-movies">
+                    10 Mind-Bending Sci-Fi Masterpieces That Reward Rewatching
+                  </a>
+                </h3>
+                <p>
+                  From ontological mysteries to temporal paradoxes, explore ten speculative science fiction films that challenge human perception and philosophical certitude.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">International Cinema • 8 min read</span>
+                <h3>
+                  <a href="/guides/hidden-gems-foreign-cinema-beginners">
+                    Hidden Gems in World Cinema: A Beginner's Guide
+                  </a>
+                </h3>
+                <p>
+                  Overcome the one-inch subtitle barrier with accessible, deeply engaging international films from South Korea, France, Japan, and Latin America.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Auteur Cinema • 9 min read</span>
+                <h3>
+                  <a href="/guides/directors-hall-of-fame-cinema-auteurs">
+                    Directors Hall of Fame: 8 Visionaries Redefining Cinema
+                  </a>
+                </h3>
+                <p>
+                  Analyze signature thematic obsessions and visual trademarks of legendary filmmakers including Denis Villeneuve, Christopher Nolan, and Hayao Miyazaki.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Cinematic Craft • 8 min read</span>
+                <h3>
+                  <a href="/guides/evolution-of-action-cinema-practical-to-cgi">
+                    The Evolution of Action Cinema: Practical Stunts to CGI
+                  </a>
+                </h3>
+                <p>
+                  Tracing the technical and choreographic history of action filmmaking from Buster Keaton and 1980s stunt work to the modern martial arts renaissance.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Suspense & Mystery • 8 min read</span>
+                <h3>
+                  <a href="/guides/psychological-thrillers-that-keep-you-guessing">
+                    Masterclasses in Suspense: 10 Psychological Thrillers
+                  </a>
+                </h3>
+                <p>
+                  Dissecting the anatomy of high-tension storytelling, unreliable narrators, and cerebral suspense through cinema's most riveting mystery masterworks.
+                </p>
+              </article>
+
+              <article class="pre-render-card">
+                <span class="pre-render-meta">Animation Art • 8 min read</span>
+                <h3>
+                  <a href="/guides/best-animated-films-for-adults">
+                    Beyond Cartoons: 10 Profound Animated Films for Adults
+                  </a>
+                </h3>
+                <p>
+                  Celebrating animation as an artistic medium capable of mature emotional complexity, philosophical inquiry, and breathtaking visual innovation.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="pre-render-section">
+            <h2>Explore Cinema by Genre</h2>
+            <p>Navigate our structured archives across 19 distinct film categories:</p>
+            <div class="pre-render-genre-grid">
+              <a href="/genre/28" class="pre-render-genre-chip">Action</a>
+              <a href="/genre/12" class="pre-render-genre-chip">Adventure</a>
+              <a href="/genre/16" class="pre-render-genre-chip">Animation</a>
+              <a href="/genre/35" class="pre-render-genre-chip">Comedy</a>
+              <a href="/genre/80" class="pre-render-genre-chip">Crime</a>
+              <a href="/genre/99" class="pre-render-genre-chip">Documentary</a>
+              <a href="/genre/18" class="pre-render-genre-chip">Drama</a>
+              <a href="/genre/10751" class="pre-render-genre-chip">Family</a>
+              <a href="/genre/14" class="pre-render-genre-chip">Fantasy</a>
+              <a href="/genre/36" class="pre-render-genre-chip">History</a>
+              <a href="/genre/27" class="pre-render-genre-chip">Horror</a>
+              <a href="/genre/10402" class="pre-render-genre-chip">Music</a>
+              <a href="/genre/9648" class="pre-render-genre-chip">Mystery</a>
+              <a href="/genre/10749" class="pre-render-genre-chip">Romance</a>
+              <a href="/genre/878" class="pre-render-genre-chip">Science Fiction</a>
+              <a href="/genre/10770" class="pre-render-genre-chip">TV Movie</a>
+              <a href="/genre/53" class="pre-render-genre-chip">Thriller</a>
+              <a href="/genre/10752" class="pre-render-genre-chip">War</a>
+              <a href="/genre/37" class="pre-render-genre-chip">Western</a>
+            </div>
+          </section>
+
+          <section class="pre-render-section">
+            <h2>Editorial Philosophy & Transparency</h2>
+            <p>
+              FilmPire is committed to editorial independence, clear attribution, and user-centric discovery. Our database integrates verified production metadata via the TMDB API, paired with our original analytical guides, genre breakdowns, and viewing recommendations. We do not accept paid placements for movie rankings, ensuring an authentic experience for every viewer.
+            </p>
+          </section>
+        </main>
+
+        <footer class="pre-render-footer">
+          <div class="pre-render-footer-links">
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact & Support</a>
+            <a href="/faq">Frequently Asked Questions</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/copyright">DMCA & Copyright</a>
+            <a href="https://buymeacoffee.com/mfasilofficial" target="_blank" rel="noopener noreferrer">Support Creator</a>
+          </div>
+          <p>© 2026 FilmPire. Engineered by Muhammed Fasil K. Powered by TMDB API. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+
+    <noscript>
+      <div style="background: #2a1515; color: #ffcccc; padding: 16px; text-align: center; font-size: 15px;">
+        JavaScript is currently disabled in your browser. While all our editorial guides and cinema archives are accessible above, enabling JavaScript will unlock real-time movie search, interactive filters, trailers, and personal watchlist features.
+      </div>
+    </noscript>
   </body>
 </html>
